@@ -1,0 +1,192 @@
+<!-- Products -->
+
+<section>
+    <div class="container my-5">
+      <header class="mb-4">
+        <h3>Nouveau produit</h3>
+      </header>
+  
+      <div class="row">
+        {% for latest in latest_products %}
+          <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+            <a href="{% url 'productview' latest.category.slug latest.slug %}">
+            <div class="card w-100 my-2 shadow-2-strong">
+                <img src="{{ latest.produit_image.url }}"  alt="Image here"  class="card-img-top img-fluid" style="aspect-ratio: 1 / 1">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">{{ latest.marque}}</h5>
+                <!--<p class="card-text  text-truncate" >{{ latest.description }}</p>-->
+                <h4>{{ latest.prix}}</h4>
+                <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+
+                  <button type="button" class="btn btn-primary me-3 float-start addToCartBtn">Add to cart <i class="fa fa-shopping-cart"></i></button>
+                  <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+                </div>
+              </div>
+            </div>
+            </a>
+          </div>
+        
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <!-- Products -->
+  
+  <!-- Feature -->
+  <section class="mt-5" style="background-color: #f5f5f5;">
+    <div class="container text-dark pt-3">
+      <header class="pt-4 pb-3">
+        <h3>Pourquoi nous choisir</h3>
+      </header>
+  
+      <div class="row mb-4">
+        <div class="col-lg-4 col-md-6">
+          <figure class="d-flex align-items-center mb-4">
+            <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
+              <i class="fas fa-camera-retro fa-2x fa-fw text-primary floating"></i>
+            </span>
+            <figcaption class="info">
+              <h6 class="title">Expertise et Conseils Personnalisés</h6>
+              <p>Notre équipe dévouée de passionnés de musique est là pour vous guider à chaque étape. Besoin de conseils sur le meilleur choix pour votre style de jeu ? Nous sommes là pour vous offrir une expertise personnalisée.</p>
+            </figcaption>
+          </figure>
+          <!-- itemside // -->
+        </div>
+        <!-- col // -->
+        <div class="col-lg-4 col-md-6">
+          <figure class="d-flex align-items-center mb-4">
+            <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
+              <i class="fas fa-star fa-2x fa-fw text-primary floating"></i>
+            </span>
+            <figcaption class="info">
+              <h6 class="title">Expertise et Conseils Personnalisé</h6>
+              <p>Notre équipe dévouée de passionnés de musique est là pour vous guider à 
+                chaque étape. Besoin de conseils sur le meilleur choix pour votre style de jeu ? Nous sommes là pour vous offrir une expertise personnalisée.</p>
+            </figcaption>
+          </figure>
+          <!-- itemside // -->
+        </div>
+        <!-- col // -->
+        <div class="col-lg-4 col-md-6">
+          <figure class="d-flex align-items-center mb-4">
+            <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
+              <i class="fas fa-plane fa-2x fa-fw text-primary floating"></i>
+            </span>
+            <figcaption class="info">
+              <h6 class="title">Qualité Garantie</h6>
+              <p>Nous croyons en la satisfaction totale de nos clients. Chaque guitare que nous vendons est soumise à des contrôles 
+                de qualité rigoureux pour garantir une performance exceptionnelle et une durabilité à long terme</p>
+            </figcaption>
+          </figure>
+          <!-- itemside // -->
+        </div>
+        <!-- col // -->
+        <div class="col-lg-4 col-md-6">
+          <figure class="d-flex align-items-center mb-4">
+            <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
+              <i class="fas fa-users fa-2x fa-fw text-primary floating"></i>
+            </span>
+            <figcaption class="info">
+              <h6 class="title">Service Client Exceptionnel</h6>
+              <p>Votre expérience d'achat ne s'arrête pas à la transaction. Notre service clientèle dévoué est disponible pour répondre 
+                à toutes vos questions et résoudre tout problème, assurant une relation continue avec nos clients.</p>
+            </figcaption>
+          </figure>
+          <!-- itemside // -->
+        </div>
+        <!-- col // -->
+        <div class="col-lg-4 col-md-6">
+          <figure class="d-flex align-items-center mb-4">
+            <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
+              <i class="fas fa-thumbs-up fa-2x fa-fw text-primary floating"></i>
+            </span>
+            <figcaption class="info">
+              <h6 class="title">Livraison Rapide et Sécurisée</h6>
+              <p>Nous comprenons l'impatience de jouer sur votre nouvelle guitare. C'est pourquoi nous nous efforçons de garantir des livraisons rapides, sûres et sécurisées, directement à votre porte.</p>
+            </figcaption>
+          </figure>
+          <!-- itemside // -->
+        </div>
+        <!-- col // -->
+        
+        <!-- col // -->
+      </div>
+    </div>
+    <!-- container end.// -->
+  </section>
+  <!-- Feature -->
+  
+  <!-- Blog -->
+  <section class="mt-5 mb-4">
+    <div class="container text-dark">
+      <header class="mb-4">
+        <h3>Blog posts</h3>
+      </header>
+  
+      <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+          <article>
+            <a href="#" class="img-fluid">
+              <img class="rounded w-100" src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/posts/1.webp" style="object-fit: cover;" height="160" />
+            </a>
+            <div class="mt-2 text-muted small d-block mb-1">
+              <span>
+                <i class="fa fa-calendar-alt fa-sm"></i>
+                23.12.2022
+              </span>
+              <a href="#"><h6 class="text-dark">How to promote brands</h6></a>
+              <p>When you enter into any new area of science, you almost reach</p>
+            </div>
+          </article>
+        </div>
+        <!-- col.// -->
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+          <article>
+            <a href="#" class="img-fluid">
+              <img class="rounded w-100" src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/posts/2.webp" style="object-fit: cover;" height="160" />
+            </a>
+            <div class="mt-2 text-muted small d-block mb-1">
+              <span>
+                <i class="fa fa-calendar-alt fa-sm"></i>
+                13.12.2022
+              </span>
+              <a href="#"><h6 class="text-dark">How we handle shipping</h6></a>
+              <p>When you enter into any new area of science, you almost reach</p>
+            </div>
+          </article>
+        </div>
+        <!-- col.// -->
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+          <article>
+            <a href="#" class="img-fluid">
+              <img class="rounded w-100" src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/posts/3.webp" style="object-fit: cover;" height="160" />
+            </a>
+            <div class="mt-2 text-muted small d-block mb-1">
+              <span>
+                <i class="fa fa-calendar-alt fa-sm"></i>
+                25.11.2022
+              </span>
+              <a href="#"><h6 class="text-dark">How to promote brands</h6></a>
+              <p>When you enter into any new area of science, you almost reach</p>
+            </div>
+          </article>
+        </div>
+        <!-- col.// -->
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+          <article>
+            <a href="#" class="img-fluid">
+              <img class="rounded w-100" src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/posts/4.webp" style="object-fit: cover;" height="160" />
+            </a>
+            <div class="mt-2 text-muted small d-block mb-1">
+              <span>
+                <i class="fa fa-calendar-alt fa-sm"></i>
+                03.09.2022
+              </span>
+              <a href="#"><h6 class="text-dark">Success story of sellers</h6></a>
+              <p>When you enter into any new area of science, you almost reach</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>

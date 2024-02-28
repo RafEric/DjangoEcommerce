@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+  <div class="container">
+    <a class="navbar-brand" href="#">guitar<span>Shop</span> <img src="{}"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <ul class="navbar-nav ms-auto">
+          <li class="navbar-item">
+            <a class="nav-link active " aria-current="page" href="{% url 'home' %}">acceuil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'collections' %}">nos produit</a>
+          </li>
+          <li class="navbar-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'cart' %}">Cart</a>
+          </li>
+         
+          {% if request.user.is_authenticated %}
+          
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'logout' %}">Déconnection</a>
+            </li>
+          {% else %}
+            <li class="navbar-item">
+              <a class="nav-link active" href="{% url 'loginpage' %}">se connecter</a>
+            </li>
+            <li class="navbar-item">
+              <a class="nav-link active" href="{% url 'register' %}" >inscription</a>
+            </li>
+          {% endif %} 
+        </ul>
+    </div>
+  </div>
+</nav>
